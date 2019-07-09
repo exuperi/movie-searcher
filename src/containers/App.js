@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { movieAction } from '../actions/MovieActions'
 import { getMovies } from '../actions/MainActions'
 import { Movie } from '../components/Movie/Movie'
+import { Filter } from '../components/Filter/Filter'
 import { Main } from '../components/Main/Main'
 import { connect } from 'react-redux';
 import './App.css';
@@ -19,13 +20,13 @@ class App extends Component {
     const { filter, movie, main, getMoviesAction } = this.props;
     return (
       <div className="app">
-      <Filter />
-      <Main 
-      filter={filter} 
-      movie={movie} 
-      main={main}
-      getMovies={getMoviesAction}
-      />
+        <Filter />
+        <Main 
+        filter={filter} 
+        movie={movie} 
+        main={main}
+        getMovies={getMoviesAction}
+        />
       </div>
       
     );

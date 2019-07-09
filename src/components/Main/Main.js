@@ -1,6 +1,6 @@
 import { Movie } from '../Movie/Movie';
 import React, { Component } from 'react';
-import './Main.css';
+import './Main.scss';
 
 export const config = {
     baseUrl:  'https://api.themoviedb.org/3',
@@ -9,9 +9,7 @@ export const config = {
 }
 
 export class Main extends Component {
-    componentWillMount() {
-        
-        
+    componentWillMount() {      
         this.props.getMovies(1);
     }
 
