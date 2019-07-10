@@ -1,16 +1,13 @@
-import { config } from '../components/Main/Main'
+import { config, url } from '../components/Main/Main'
 
 export const GET_MOVIES_REQUEST = 'GET_MOVIES_REQUEST',
              GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS',
              GET_MOVIES_FAILURE = 'GET_MOVIES_FAILURE';
 
-const { baseUrl, apiKey, language } = config;
+// export const url = ``
 
-
-
-function fetchMovies(page) {
+function fetchMovies(url) {
     return dispatch => {
-        let  url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=${language}&page=${page}&region=UA`;
         fetch( url, {
             method: 'GET'
         })
@@ -40,12 +37,13 @@ function fetchMovies(page) {
     
 }
 
-export function getMovies( page ) {
+
+export function getMovies( url ) {
     return function( dispatch ) {
         dispatch({
             type: GET_MOVIES_REQUEST
         })
-        fetchMovies(page)(dispatch);
+        fetchMovies(url)(dispatch);
            
     }
 }

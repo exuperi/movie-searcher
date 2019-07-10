@@ -3,6 +3,7 @@ import { movieAction } from '../actions/MovieActions'
 import { getMovies } from '../actions/MainActions'
 import { Movie } from '../components/Movie/Movie'
 import { Filter } from '../components/Filter/Filter'
+import { filterChange } from '../actions/FilterActions'
 import { Main } from '../components/Main/Main'
 import { connect } from 'react-redux';
 import './App.css';
@@ -17,12 +18,14 @@ export const config = {
 class App extends Component {
   
   render() {
-    const { filter, movie, main, getMoviesAction } = this.props;
+    const { filter, movie, main, getMoviesAction, filterChange } = this.props;
     return (
       <div className="app">
-        <Filter />
+        <Filter 
+        filterChange = {filterChange}
+        />
         <Main 
-        filter={filter} 
+        filter={filter}
         movie={movie} 
         main={main}
         getMovies={getMoviesAction}
@@ -43,7 +46,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMoviesAction: page => dispatch( getMovies (page) ),
+    getMoviesAction: url => dispatch( getMovies (url) ),
+    filterChange: filter => dispatch( filterChange (filter ) ),
   }
 }
 

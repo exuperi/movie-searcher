@@ -1,16 +1,17 @@
 import { Movie } from '../Movie/Movie';
 import React, { Component } from 'react';
 import './Main.scss';
+import { setUrl } from '../../actions/MainActions';
 
-export const config = {
-    baseUrl:  'https://api.themoviedb.org/3',
-    apiKey:   '1fafe97d2ee12ba14e11814dc5afeaa2',
-    language: 'en-US',
-}
+
+
+
 
 export class Main extends Component {
+    
+
     componentWillMount() {      
-        this.props.getMovies(1);
+        this.props.getMovies(this.props.filter.url);
     }
 
     componentDidMount() {
@@ -24,8 +25,7 @@ export class Main extends Component {
           let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
           if (windowRelativeBottom < document.documentElement.clientHeight + 50)
           {
-             
-              this.props.getMovies(this.props.main.page);
+              this.props.getMovies(this.props.filter.nextPage);
           }
  
     }
@@ -38,9 +38,9 @@ export class Main extends Component {
                vote_average: popularity, 
                release_date: releaseDate }) => (
                    <Movie 
-                   key = {id}
-                   id = { id }
-                   imagePath = { imagePath }
+                    key = {id}
+                    id = { id }
+                    imagePath = { imagePath }
                     overview = { overview }
                     popularity = { popularity }
                     title = { title }
