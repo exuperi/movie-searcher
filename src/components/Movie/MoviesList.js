@@ -18,11 +18,14 @@ export class MoviesList extends Component {
     }
 
     handleOnScroll = () => {
-        
+          const { filter, movies, getMovies } = this.props;
           let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
           if (windowRelativeBottom < document.documentElement.clientHeight + 50)
-          {
-              this.props.getMovies(this.props.filter.currentFilter, this.props.movies.page);
+          { console.log(movies.page);
+            if( movies.page == 1){
+                getMovies(filter.currentFilter, ++movies.page);
+            }
+            getMovies(filter.currentFilter, movies.page);
           }
  
     }

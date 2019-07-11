@@ -15,14 +15,14 @@ const initialState = {
 export function moviesReducer( state = initialState, action ) {
     switch( action.type ) {
         case GET_MOVIES_REQUEST: {
-            return {...state, isFetching: true};
+            return {...state, isFetching: true, page: state.page + 1};
         }
         case GET_MOVIES_SUCCESS: {
             return {...state, isFetching: false,
-                 moviesArray: state.moviesArray.concat( action.payload ), page: state.page + 1}
+                 moviesArray: state.moviesArray.concat( action.payload )}
         }
         case GET_MOVIES_FAILURE: {
-            return {...state, isFetching: false, error: action.payload}
+            return {...state, isFetching: false, error: action.payload, page: state.page - 1}
         }
         default:
             return state;
