@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { movieAction } from '../actions/MovieActions'
 import { getMovies } from '../actions/MainActions'
 import { Movie } from '../components/Movie/Movie'
-import { Filter } from '../components/Filter/Filter'
+import Filter from '../containers/Filter'
+import Movies from '../containers/Movies'
 import { filterChange } from '../actions/FilterActions'
 import { Main } from '../components/Main/Main'
 import { connect } from 'react-redux';
@@ -18,18 +19,17 @@ export const config = {
 class App extends Component {
   
   render() {
-    const { filter, movie, main, getMoviesAction, filterChange } = this.props;
+    // const { filter, movie, main, getMoviesAction, filterChange } = this.props;
     return (
       <div className="app">
-        <Filter 
-        filterChange = {filterChange}
-        />
-        <Main 
+        <Filter />
+        <Movies />
+        {/* <Main 
         filter={filter}
         movie={movie} 
         main={main}
         getMovies={getMoviesAction}
-        />
+        /> */}
       </div>
       
     );
