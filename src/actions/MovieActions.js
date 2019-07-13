@@ -1,9 +1,19 @@
-export const TEST = 'TEST';
+export const SHOW_DETAILS = 'SHOW_DETAILS',
+            HIDE_DETAILS = 'HIDE_DETAILS';
 
-export function movieAction() {
+export function showDetails( title, overview, imagePath, popularity ) {
     return function( dispatch ) {
         dispatch ({
-            type: TEST,
+            type: SHOW_DETAILS,
+            payload: [title, overview, imagePath, popularity],
+        })
+    }
+}
+
+export function hideDetails() {
+    return function( dispatch ) {
+        dispatch ({
+            type: HIDE_DETAILS,
         })
     }
 }

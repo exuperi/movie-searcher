@@ -5,14 +5,14 @@
         font-weight: 600;
         position: fixed;
         top: 8px;
-        left: 8px;
+
         z-index: 10;
 
         &__item {
             background-color: rgb(168, 165, 162);
             color: #000;
             padding: 5px 15px;
-            margin: 10px;
+            margin: 5px;
 
             &:hover {
                 cursor: pointer;

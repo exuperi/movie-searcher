@@ -9,7 +9,7 @@ const initialState = {
     moviesArray: [],
     isFetching: false,
     error: '',
-    page: 1
+    page: 1,
 };
 
 export function moviesReducer( state = initialState, action ) {

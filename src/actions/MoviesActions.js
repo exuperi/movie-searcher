@@ -33,24 +33,28 @@ function fetchMovies(url) {
     
 }
 
-function setUrl( filter, page ) {
+function setUrl( filter, page, inputValue ) {
     const config = {
         baseUrl:  'https://api.themoviedb.org/3',
         apiKey:   '1fafe97d2ee12ba14e11814dc5afeaa2',
         language: 'en-US',
     }
-
+    if( inputValue ) {
+        return `${config.baseUrl}/search/movie?api_key=${config.apiKey}&page=${page}&query=${inputValue}`;
+    }
     return `${config.baseUrl}/movie/${filter}?api_key=${config.apiKey}&language=${config.language}&page=${page}&region=UA`;
 }
 
 
-export function getMovies( filter, page  ) {
+export function getMovies( filter, page, inputValue  = '') {
     return function( dispatch ) {
         dispatch({
             type: GET_MOVIES_REQUEST
         })
-        const url = setUrl( filter, page );
+
+        const url = setUrl( filter, page, inputValue );
         console.log(url);
+        console.log(inputValue)
         fetchMovies(url)(dispatch);
            
     }

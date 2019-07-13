@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import './Movie.css';
+import './Movie.scss';
 
-const options = {
+export const options = {
     imgUrl: 'https://image.tmdb.org/t/p/w300/',
 
 }
 
 export class Movie extends Component {
+    onClickHandler = () => {
+        const { title, overview, imagePath, popularity } = this.props;
+        const image = options.imgUrl + imagePath;
+        this.props.showDetails( title, overview, image, popularity);
+    }
+
     render() {
         const { id, imagePath, popularity } = this.props;
         let image = imagePath !== undefined ? imagePath : 'kqjL17yufvn9OVLyXYpvtyrFfak.jpg';
@@ -15,8 +21,11 @@ export class Movie extends Component {
             <div 
                 className="img"
                 id = { id }
-                style = { { backgroundImage: `url(${image})` } } >
-            
+                style = { { backgroundImage: `url(${image})` } } 
+                onClick={this.onClickHandler}
+            >
+               
+                
                 <span>{popularity}</span>
             </div>
         );

@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import { FilterList } from '../components/Filter/FilterList'
+import { FilterInput } from '../components/Filter/FilterInput'
 import { connect } from 'react-redux';
-import { filterChange } from '../actions/FilterActions';
+import { filterChange, inputChange } from '../actions/FilterActions';
 import { getMovies } from '../actions/MoviesActions';
 
 export class Filter extends Component {
     render() {
-        const { filterChange, getMovies, movies } = this.props;
+        const { filterChange, getMovies, movies, inputChange, filter } = this.props;
         return (
-            <FilterList
-                // filter={filter}
+            <div>
+                <FilterList
                 movies={movies}
                 getMovies={getMovies}
                 filterChange={filterChange}
-            />
+                />
+                <FilterInput 
+                movies={movies}
+                getMovies={getMovies}
+                inputChange={inputChange}
+                filter={filter}
+                />
+            </div>
         );
     }
 }
@@ -28,7 +36,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return ({
         filterChange: filter => dispatch( filterChange( filter ) ),
-        getMovies: (filter, page) => dispatch( getMovies( filter, page )),
+        getMovies: (filter, page, inputValue) => dispatch( getMovies( filter, page, inputValue )),
+        inputChange: value => dispatch( inputChange( value ) ),
     });
 }
 

@@ -5,4 +5,8 @@
     height: 400px;
     position: relative;
 
+    &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+    }
 }
