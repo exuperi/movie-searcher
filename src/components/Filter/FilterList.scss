@@ -4,19 +4,20 @@
         font-size: 2rem;
         font-weight: 600;
         position: fixed;
-        top: 8px;
-
+        top: 30px;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
         z-index: 10;
 
         &__item {
-            background-color: rgb(168, 165, 162);
-            color: #000;
+            background-color: rgb(255, 127, 80);
+            color: white;
             padding: 5px 15px;
             margin: 5px;
 
             &:hover {
                 cursor: pointer;
-                background-color: rgba(168, 165, 162, 0.8);
+                background-color: rgba(255, 127, 80, 0.8);
             }
         }
     }

@@ -53,9 +53,9 @@ export function getMovies( filter, page, inputValue  = '') {
         })
 
         const url = setUrl( filter, page, inputValue );
-        console.log(url);
-        console.log(inputValue)
         fetchMovies(url)(dispatch);
            
     }
 }
+
+

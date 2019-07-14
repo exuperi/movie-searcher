@@ -1,4 +1,26 @@
-.filter__form {
-    position: fixed;
+.filter {
 
+
+    &__form {
+        position: fixed;
+        top: 15px;
+        left: 45px;
+
+    }
+
+    &__input {
+        padding: 5px;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    &__submit {
+        padding: 5px 10px;
+        background-color: coral;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        border: 1px solid white;
+        border-radius: 0 5px 5px 0;
+        color: white;
+    }
 }

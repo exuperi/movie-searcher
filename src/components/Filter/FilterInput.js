@@ -6,7 +6,6 @@ export class FilterInput extends Component {
         e.preventDefault();
         const { getMovies, movies, filter } = this.props;
         let inputText = filter.inputValue.toString();
-        console.log(inputText);
         let arrLength = movies.moviesArray.length; 
         movies.moviesArray.splice(0, arrLength);
         movies.page = 1;
@@ -17,15 +16,17 @@ export class FilterInput extends Component {
         e.preventDefault();
         const inputValue = e.target.value;
         const { inputChange } = this.props;
-        console.log(inputValue);
         inputChange(inputValue);
     }
-    
+
     render() {
         return (
             <form className='filter__form'>
-                <input type='text' onChange={this.onChangeHandler} placeholder='Search for movies...'></input>
-                <button type='button' onClick={this.onBtnClickHandler} >Click</button>
+                <input className='filter__input' type='text' 
+                onChange={this.onChangeHandler}
+                placeholder='Search for movies...'></input>
+                <button className='filter__submit' type='button' 
+                onClick={this.onBtnClickHandler} >Click</button>
             </form>
         );
     }

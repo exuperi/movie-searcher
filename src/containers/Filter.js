@@ -10,17 +10,17 @@ export class Filter extends Component {
         const { filterChange, getMovies, movies, inputChange, filter } = this.props;
         return (
             <div>
-                <FilterList
-                movies={movies}
-                getMovies={getMovies}
-                filterChange={filterChange}
-                />
                 <FilterInput 
                 movies={movies}
                 getMovies={getMovies}
                 inputChange={inputChange}
                 filter={filter}
                 />
+                <FilterList
+                movies={movies}
+                getMovies={getMovies}
+                filterChange={filterChange}
+                /> 
             </div>
         );
     }
