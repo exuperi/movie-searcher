@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Movie } from './Movie'
 import { MovieDetails } from './MovieDetails'
-import { options } from './Movie'
 import './MoviesList.scss'
 
 export class MoviesList extends Component {
