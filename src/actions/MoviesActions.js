@@ -7,8 +7,7 @@ function fetchMovies(url) {
         fetch( url, {
             method: 'GET'
         })
-            .then((result) => {
-                
+            .then((result) => {               
                 return result.json();
             })
             .then( ({results}) => {

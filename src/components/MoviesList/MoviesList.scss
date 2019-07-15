@@ -1,7 +1,12 @@
 .wrapper {
+
+    margin-top: 60px;
+}
+
+.movies-list {
     width: 80%;
     display: grid;
-    margin-left: 20%;
+    margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
 }

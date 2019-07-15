@@ -21,13 +21,18 @@ export class FilterInput extends Component {
 
     render() {
         return (
-            <form className='filter__form'>
-                <input className='filter__input' type='text' 
-                onChange={this.onChangeHandler}
-                placeholder='Search for movies...'></input>
-                <button className='filter__submit' type='button' 
-                onClick={this.onBtnClickHandler} >Click</button>
-            </form>
+            <div  className='filter__form'>
+                <form onSubmit={this.onBtnClickHandler}>
+                    <div className='filter__input'>
+                        <input type='text' 
+                        onChange={this.onChangeHandler}
+                        placeholder='Search for movies...' />
+                    </div>
+                    <div className='filter__submit' >
+                        <button type='submit'>Search</button>
+                    </div>          
+                </form>
+            </div>
         );
     }
 }

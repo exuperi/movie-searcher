@@ -56,7 +56,10 @@ export class MoviesList extends Component {
         
         return (
             <div className="wrapper">
-                {moviesList}
+                <div className="movies-list">
+                    {moviesList}
+                </div>
+                
                 <div className="popup" style={this.props.movie.details ? {display: 'flex'} : {display: 'none'} }>
                     <MovieDetails 
                     title={movie.title}

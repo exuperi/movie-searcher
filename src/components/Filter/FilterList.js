@@ -15,7 +15,7 @@ export class FilterList extends Component {
     }
     render() {
         return (
-            <ul className="filter">
+            <ul className="filter__list">
                 <li className="filter__item" onClick={this.onClickHandler}>Popular</li>
                 <li className="filter__item" onClick={this.onClickHandler}>Now_playing</li>
                 <li className="filter__item" onClick={this.onClickHandler}>Top_rated</li>

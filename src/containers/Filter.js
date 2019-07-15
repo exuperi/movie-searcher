@@ -4,23 +4,24 @@ import { FilterInput } from '../components/Filter/FilterInput'
 import { connect } from 'react-redux';
 import { filterChange, inputChange } from '../actions/FilterActions';
 import { getMovies } from '../actions/MoviesActions';
+import './Filter.scss';
 
 export class Filter extends Component {
     render() {
         const { filterChange, getMovies, movies, inputChange, filter } = this.props;
         return (
-            <div>
+            <div className='filter__wrapper'>          
+                <FilterList
+                movies={movies}
+                getMovies={getMovies}
+                filterChange={filterChange}
+                /> 
                 <FilterInput 
                 movies={movies}
                 getMovies={getMovies}
                 inputChange={inputChange}
                 filter={filter}
                 />
-                <FilterList
-                movies={movies}
-                getMovies={getMovies}
-                filterChange={filterChange}
-                /> 
             </div>
         );
     }
