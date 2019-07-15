@@ -14,8 +14,6 @@
     &__sidebar {
         display: flex;
         flex-direction: column;
-        align-items: space-between;
-        justify-content: space-between;
         margin: 0 auto;
     }
 
@@ -32,7 +30,15 @@
         padding-left: 20px;
     }
 
-    &__popularity {}
+    &__popularity {
+        background-color: #fff;
+        border-radius: 5px 0 5px 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px 20px;
+        font-size: 20px;
+    }
 
     &__overview {
         font-size: 16px;
