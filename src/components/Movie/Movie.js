@@ -22,11 +22,9 @@ export class Movie extends Component {
                 className="img"
                 id = { id }
                 style = { { backgroundImage: `url(${image})` } } 
-                onClick={this.onClickHandler}
-            >
-               
-                
-                <span>{popularity}</span>
+                onClick={this.onClickHandler}>  
+                             
+                <span className='popularity'>{popularity.toFixed(1)}</span>
             </div>
         );
     }

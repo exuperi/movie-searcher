@@ -3,7 +3,7 @@ import './MovieDetails.scss';
 
 export class MovieDetails extends Component {
     render() {
-        const { title, overview, imagePath, popularity } = this.props;
+        const { title, overview, imagePath, popularity, hideDetails } = this.props;
         return(
             <div className="details">
                 <div className="details__poster" style={{ backgroundImage: `url(${imagePath})`}}>
@@ -17,9 +17,10 @@ export class MovieDetails extends Component {
                         {overview}
                     </p>
                     <span className="details__popularity">
-                        {popularity.toFixed(2)}
+                        {popularity.toFixed(1)}
                     </span>
                 </div>
+                <div className='close' onClick={hideDetails}></div>
                 
             </div>
         );

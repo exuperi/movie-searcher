@@ -66,8 +66,9 @@ export class MoviesList extends Component {
                     overview={movie.overview}
                     popularity={movie.popularity}
                     imagePath={movie.imagePath}
+                    hideDetails={hideDetails}
                     />
-                    <button onClick={hideDetails}>Close</button>
+                    
                 </div>
             </div>
         );

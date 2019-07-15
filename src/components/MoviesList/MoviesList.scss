@@ -1,5 +1,5 @@
 .wrapper {
-
+    background-color: #000;
     margin-top: 60px;
 }
 
@@ -8,7 +8,7 @@
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    gap: 25px;
 }
 
 .popup {

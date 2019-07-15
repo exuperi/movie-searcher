@@ -4,7 +4,19 @@
     background-position: center;
     height: 400px;
     position: relative;
+    margin: 10px;
+    border-radius: 5px;
 
+    .popularity {
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        padding: 5px 15px;
+        border-radius: 5px 0 5px 0;
+    }
 
     &:hover {
         transform: scale(1.01);
