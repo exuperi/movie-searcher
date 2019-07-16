@@ -1,3 +1,6 @@
+@import '../../styles/palette.scss';
+@import '../../styles/mixins.scss';
+
 .img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,14 +11,11 @@
     border-radius: 5px;
 
     .popularity {
-        font-size: 18px;
-        font-family: 'Montserrat', sans-serif;
-        position: absolute;
+        @include font-montserrat;
+        @include popularity;
         top: 0;
         left: 0;
-        background-color: #fff;
         padding: 5px 15px;
-        border-radius: 5px 0 5px 0;
     }
 
     &:hover {

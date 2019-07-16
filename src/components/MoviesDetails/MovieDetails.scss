@@ -1,3 +1,4 @@
+@import '../../styles/palette.scss';
 @import '../../styles/mixins.scss';
 
 .details {
@@ -7,9 +8,8 @@
     grid-template-columns: 1fr 2fr;
     width: 50%;
     height: 400px;
-    background-color: #F6E9E9;
+    background-color: $detailsBgColor;
     border-radius: 5px;
-
 
     &__sidebar {
         display: flex;
@@ -21,19 +21,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 5px 0 0 5px;
-
-
     }
 
     &__title {
         font-size: 22px;
         padding-left: 20px;
+        padding-right: 55px;
     }
 
     &__popularity {
-        background-color: #fff;
-        border-radius: 5px 0 5px 0;
-        position: absolute;
+        @include popularity;
         bottom: 0;
         right: 0;
         padding: 10px 20px;
@@ -43,7 +40,11 @@
     &__overview {
         font-size: 16px;
         line-height: 25px;
-        padding: 0 10px;
+        padding: 0 20px;
+    }
+
+    &__release-date {
+        padding-left: 20px;
     }
 }
 
@@ -54,27 +55,27 @@
     width: 32px;
     height: 32px;
     transition: opacity ease .2s;
-}
 
-.close:hover {
-    cursor: pointer;
-    opacity: .6;
-}
+    &:hover {
+        cursor: pointer;
+        opacity: .6;
+    }
 
-.close:before,
-.close:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #444;
-}
+    &:before,
+    &:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: $filterBgColor;
+    }
 
-.close:before {
-    transform: rotate(45deg);
-}
+    &:before {
+        transform: rotate(45deg);
+    }
 
-.close:after {
-    transform: rotate(-45deg);
+    &:after {
+        transform: rotate(-45deg);
+    }
 }

@@ -6,6 +6,7 @@ const initialState = {
     imagePath: '',
     overview: '',
     popularity: 0,
+    releaseDate: '',
     details: false,
 };
 
@@ -13,10 +14,11 @@ export function movieReducer( state = initialState, action ) {
     switch( action.type ) {
         case SHOW_DETAILS: {
             return {...state, details: true,
-                 title: action.payload[0], 
-                 overview: action.payload[1],
-                imagePath: action.payload[2],
-                popularity: action.payload[3]
+                title: action.payload.title, 
+                overview: action.payload.overview,
+                imagePath: action.payload.imagePath,
+                popularity: action.payload.popularity,
+                releaseDate: action.payload.releaseDate
                 };
         }
         case HIDE_DETAILS: {

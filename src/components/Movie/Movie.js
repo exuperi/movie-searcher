@@ -8,9 +8,9 @@ export const options = {
 
 export class Movie extends Component {
     onClickHandler = () => {
-        const { title, overview, imagePath, popularity } = this.props;
+        const { title, overview, imagePath, popularity, releaseDate } = this.props;
         const image = options.imgUrl + imagePath;
-        this.props.showDetails( title, overview, image, popularity);
+        this.props.showDetails( title, overview, image, popularity, releaseDate);
     }
 
     render() {

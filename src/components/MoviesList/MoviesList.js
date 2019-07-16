@@ -36,7 +36,8 @@ export class MoviesList extends Component {
         const moviesList = moviesArray.map(
             ({ id, title, overview,
                poster_path: imagePath,
-               vote_average: popularity
+               vote_average: popularity,
+               release_date: releaseDate
              }) => (
                    <Movie
                     key = {id}
@@ -48,6 +49,7 @@ export class MoviesList extends Component {
                     showDetails={showDetails}
                     hideDetails={hideDetails}
                     details={movie.details}
+                    releaseDate={ releaseDate }
                    />
                )
         
@@ -67,6 +69,7 @@ export class MoviesList extends Component {
                     popularity={movie.popularity}
                     imagePath={movie.imagePath}
                     hideDetails={hideDetails}
+                    releaseDate={movie.releaseDate}
                     />
                     
                 </div>

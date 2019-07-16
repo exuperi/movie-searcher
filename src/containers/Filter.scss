@@ -1,9 +1,11 @@
+@import '../styles/palette.scss';
+
 .filter {
     &__wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #444;
+        background-color: $filterBgColor;
         height: 60px;
         position: fixed;
         top: 0;

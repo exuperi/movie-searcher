@@ -1,3 +1,6 @@
+@import '../../styles/palette.scss';
+@import '../../styles/mixins.scss';
+
 .filter {
     box-sizing: border-box;
 
@@ -18,8 +21,8 @@
 
         input {
             padding: 7px;
+            @include font-montserrat;
             font-size: 14px;
-            font-family: 'Montserrat', sans-serif;
             width: 100%;
             outline: none;
             border: none;
@@ -28,21 +31,19 @@
     }
 
     &__submit {
-
         width: 20%;
-
 
         button {
             height: 100%;
             width: 100%;
             padding: 5px 10px;
-            background-color: #928B8B;
+            background-color: $buttonColor;
+            @include font-montserrat;
             font-size: 14px;
-            font-family: 'Montserrat', sans-serif;
             border: none;
             border-radius: 0 3px 3px 0;
             border-left: none;
-            color: white;
+            color: $fontColor;
             outline: none;
             transition: opacity ease .1s;
 

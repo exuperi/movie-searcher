@@ -37,7 +37,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return ({
         getMovies: (filter, page, inputValue) => dispatch( getMovies( filter, page, inputValue )),
-        showDetails: ( title, overview, imagePath, popularity) => dispatch( showDetails(title, overview, imagePath, popularity) ),
+        showDetails: ( title, overview, imagePath, popularity, releaseDate) => 
+        dispatch( showDetails(title, overview, imagePath, popularity, releaseDate) ),
         hideDetails: () => dispatch( hideDetails() ),
     });
 }

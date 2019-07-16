@@ -2,3 +2,9 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
+
+@mixin popularity {
+    background-color: $fontColor;
+    border-radius: 5px 0 5px 0;
+    position: absolute;
+}
