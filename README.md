@@ -1,9 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Github Pages:
 
-## To run this app:
+https://drozds.github.io/movie-searcher/index
 
-Download or copy repository, and then run:
-
-### `npm i`
-
-### `npm start`
